@@ -629,17 +629,6 @@ strong { font-weight: 700; }
 .habit h3 { margin-bottom: .2rem; font-size: 1.15rem; }
 .habit p { margin-bottom: .45rem; color: var(--ink-soft); }
 .habit__body { min-width: 0; }
-.qchip {
-  display: inline-flex;
-  align-items: center;
-  gap: .3rem;
-  font-size: .82rem;
-  font-weight: 600;
-  color: var(--navy);
-  background: rgba(3, 2, 122, .07);
-  padding: .1rem .65rem;
-  border-radius: 999px;
-}
 
 /* ---------- 14. Quiz teaser ---------- */
 .teaser {

@@ -189,7 +189,7 @@ var Site = (function () {
     var lines = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//Al Estiqlal Private School 11آ//Self-check reminder//AR',
+      'PRODID:-//Al Estiqlal Private School 11 أ//Self-check reminder//AR',
       'CALSCALE:GREGORIAN',
       'METHOD:PUBLISH',
       'BEGIN:VEVENT',

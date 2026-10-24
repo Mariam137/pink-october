@@ -1,7 +1,7 @@
 # لأجلكِ يُزهر أكتوبر 🌸
 
-مبادرة توعوية بسرطان الثدي من **طالبات الصف 11آ** في **مدرسة الاستقلال الخاصة**.
-A breast cancer awareness site by Grade 11آ students at Al Estiqlal Private School.
+مبادرة توعوية بسرطان الثدي من **طالبات الصف 11 أ** في **مدرسة الاستقلال الخاصة**.
+A breast cancer awareness site by Grade 11 أ students at Al Estiqlal Private School.
 
 > [!IMPORTANT]
 > **قبل الورشة:** اطلبوا من ممرضة المدرسة أو معلّمة الصحة مراجعة كل المحتوى الطبي في الموقع.
