@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ملصق QR · لأجلكِ يُزهر أكتوبر</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="poster-page">
+  <div class="poster-tools container">
+    <button type="button" class="btn" onclick="window.print()">اطبعي الملصق (A4)</button>
+    <p>نصيحة: فعّلي خيار «طباعة الخلفيات» في نافذة الطباعة ليظهر لون الورق.</p>
+    <p class="poster-warning" id="poster-warning" hidden>
+      ⚠️ رمز QR يشير الآن إلى عنوان محلي. بعد نشر الموقع، ضعوا رابطه في <code>js/config.js</code> ← <code>siteUrl</code> ثم اطبعوا الملصق.
+    </p>
+  </div>
+
+  <main class="poster" aria-label="ملصق للطباعة">
+    <div class="poster__top">
+      <img class="poster__logo" src="assets/logo.png" alt="شعار مدرسة الاستقلال الخاصة">
+      <p class="poster__school"><span data-c="schoolName">مدرسة الاستقلال الخاصة</span><br><span data-c="credit">من صنع طالبات الصف 11A</span></p>
+    </div>
+
+    <h1 class="poster__name" data-c="initiativeName">لأجلكِ يُزهر أكتوبر</h1>
+    <p class="poster__sub">كم تعرفين عن صحتكِ؟ امسحي الرمز واكتشفي</p>
+
+    <div class="poster__qr" id="poster-qr"></div>
+
+    <p class="poster__cta">اختبار «نسبة وعيك ووقايتك»</p>
+    <p class="poster__cta-sub">١٠ أسئلة · دقيقتان · خاص تمامًا</p>
+    <p class="poster__url" id="poster-url"></p>
+
+    <p class="poster__credit">🌸 أكتوبر الوردي</p>
+
+    <svg class="doodle" style="top:30%; inset-inline-start:6%; width:9cqi; height:9cqi" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3.5l4.6 10.6 11.2 1.3-8.6 7.6 2.7 11.4L20 28.3l-10 6.1 2.8-11.5-8.7-7.4 11.4-1.4z"/></svg>
+    <svg class="doodle" style="bottom:22%; inset-inline-end:7%; width:11cqi; height:11cqi; color:#D89AA6" viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor" stroke="none"><ellipse cx="24" cy="13" rx="6.5" ry="10"/><ellipse cx="24" cy="13" rx="6.5" ry="10" transform="rotate(72 24 24)"/><ellipse cx="24" cy="13" rx="6.5" ry="10" transform="rotate(144 24 24)"/><ellipse cx="24" cy="13" rx="6.5" ry="10" transform="rotate(216 24 24)"/><ellipse cx="24" cy="13" rx="6.5" ry="10" transform="rotate(288 24 24)"/></g><circle cx="24" cy="24" r="5" fill="#C99A2E" stroke="none"/></svg>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/vendor/qrcode.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    (function () {
+      Site.bindContent(document);
+      // The QR opens the quiz directly.
+      var url = new URL('quiz.html', Site.siteUrl()).href;
+      document.getElementById('poster-qr').innerHTML = Site.qrSvg(url, '#03027A');
+      document.getElementById('poster-url').textContent = url.replace(/^https?:\/\//, '');
+      var local = !Site.config.siteUrl && /^(file:|http:\/\/(localhost|127\.|192\.168\.))/.test(location.href);
+      document.getElementById('poster-warning').hidden = !local;
+    })();
+  </script>
+</body>
+</html>

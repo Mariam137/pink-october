@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>نسبة وعيك ووقايتك · لأجلكِ يُزهر أكتوبر</title>
+  <meta name="description" content="اختبار خاص من ١٠ أسئلة: «نسبة وعيك ووقايتك». تحصلين في النهاية على مؤشر الوعي والوقاية ونصائح تناسبكِ. إجاباتكِ تبقى على جهازكِ.">
+  <meta name="theme-color" content="#FCE9EE">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preload" href="assets/fonts/readex-pro-arabic-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-arabic-arabic-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="quiz-page">
+  <a class="skip-link" href="#main">تخطّي إلى المحتوى</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="شعار مدرسة الاستقلال الخاصة" width="40" height="44">
+        <span class="brand__text">
+          <span class="brand__name"><span class="brand__prefix">مبادرة </span><span data-c="initiativeName">لأجلكِ يُزهر أكتوبر</span></span>
+          <span class="brand__school" data-c="schoolName">مدرسة الاستقلال الخاصة</span>
+        </span>
+      </a>
+      <a class="menu-toggle" href="index.html">الرئيسية</a>
+    </div>
+  </header>
+
+  <main id="main" class="quiz-main">
+    <div class="container quiz-wrap">
+
+      <!-- ========== ١. المقدّمة ========== -->
+      <section class="screen quiz-intro" id="screen-intro" tabindex="-1" aria-labelledby="quiz-title">
+        <p class="kicker">اختبار قصير</p>
+        <h1 id="quiz-title" data-focus tabindex="-1">نسبة وعيك ووقايتك</h1>
+        <p class="lead">عشرة أسئلة بسيطة عن عاداتكِ ومعرفتكِ. في النهاية تحصلين على <strong>مؤشر الوعي والوقاية</strong> الخاص بكِ، مع نصائح عملية تناسبكِ.</p>
+        <ul class="quiz-intro__facts">
+          <li id="q-count">١٠ أسئلة</li>
+          <li>دقيقتان تقريبًا</li>
+          <li>بلا تسجيل ولا اسم</li>
+        </ul>
+        <div class="privacy-note">
+          <svg viewBox="0 0 36 36" aria-hidden="true"><rect x="7" y="16" width="22" height="15" rx="3"/><path d="M11 16v-4.5a7 7 0 0 1 14 0V16M18 22.5v3"/></svg>
+          <p><strong>خاص تمامًا.</strong> <span id="privacy-text">إجاباتكِ تبقى على جهازكِ فقط، ولا تُرسل إلى أي مكان. لا تتبّع ولا كوكيز. فكوني صريحة مع نفسكِ.</span></p>
+        </div>
+        <p class="mirror-note">هذا ليس تشخيصًا طبيًا؛ هو مرآة صغيرة لعاداتكِ ووعيكِ.</p>
+        <button type="button" class="btn" id="start-btn">ابدئي الاختبار</button>
+
+        <div class="returning" id="returning" hidden>
+          <span>آخر نتيجة محفوظة على جهازكِ: <strong id="returning-pct"></strong></span>
+          <span class="btn-row">
+            <button type="button" class="btn btn--ghost btn--small" id="returning-view">اعرضي نتيجتي</button>
+            <button type="button" class="link-btn" data-clear-data>امسحي بياناتي</button>
+          </span>
+        </div>
+      </section>
+
+      <!-- ========== ٢. سؤال تمهيدي اختياري ========== -->
+      <section class="screen" id="screen-profile" tabindex="-1" aria-labelledby="profile-title" hidden>
+        <p class="kicker">قبل أن نبدأ <span class="optional-tag">(اختياري)</span></p>
+        <h2 id="profile-title" data-focus tabindex="-1">عرّفينا عليكِ قليلًا</h2>
+        <p class="lead">نستخدم هذا فقط لنكتب لكِ نصائح تناسب عمركِ. لا يؤثّر على نتيجتكِ أبدًا.</p>
+        <form id="profile-form">
+          <fieldset class="profile-group">
+            <legend id="profile-role-label">أنا…</legend>
+            <div class="pill-row" id="profile-role"></div>
+          </fieldset>
+          <fieldset class="profile-group">
+            <legend id="profile-age-label">عمري</legend>
+            <div class="pill-row" id="profile-age"></div>
+          </fieldset>
+          <div class="quiz-nav">
+            <button type="button" class="btn btn--ghost" id="profile-back">رجوع</button>
+            <span class="btn-row">
+              <button type="button" class="link-btn" id="skip-profile">تخطّي</button>
+              <button type="submit" class="btn">التالي</button>
+            </span>
+          </div>
+        </form>
+      </section>
+
+      <!-- ========== ٣. الأسئلة ========== -->
+      <section class="screen" id="screen-question" tabindex="-1" aria-label="أسئلة الاختبار" hidden>
+        <div class="progress">
+          <div class="progress__label"><span id="progress-text"></span></div>
+          <div class="progress__bar" id="progress-bar" role="progressbar" aria-valuemin="1" aria-valuemax="10" aria-valuenow="1" aria-label="التقدّم في الاختبار">
+            <div class="progress__fill" id="progress-fill"></div>
+          </div>
+        </div>
+        <form id="question-form">
+          <fieldset class="question" id="question" data-focus tabindex="-1"></fieldset>
+          <div class="quiz-nav">
+            <button type="button" class="btn btn--ghost" id="prev-btn">السابق</button>
+            <button type="submit" class="btn" id="next-btn" disabled>التالي</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ========== ٤. النتيجة ========== -->
+      <section class="screen" id="screen-results" tabindex="-1" aria-labelledby="level-title" hidden>
+        <div class="results__head">
+          <p class="kicker" id="result-kicker">مؤشر الوعي والوقاية</p>
+          <div class="gauge" id="gauge" role="img" aria-label="">
+            <svg viewBox="0 0 220 220" aria-hidden="true">
+              <path class="gauge__sketch" d="M112 6c58 2 104 46 102 106-2 58-48 102-106 100C50 210 4 164 8 104 12 50 56 6 116 8"/>
+              <circle class="gauge__track" cx="110" cy="110" r="88"/>
+              <circle class="gauge__value" id="gauge-value" cx="110" cy="110" r="88" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" transform="rotate(-90 110 110)"/>
+            </svg>
+            <div class="gauge__num"><strong id="gauge-num">٠٪</strong><span>من ١٠٠</span></div>
+          </div>
+          <h1 class="level-title" id="level-title" data-focus tabindex="-1"></h1>
+          <p class="level-msg" id="level-msg"></p>
+        </div>
+
+        <div class="result-block">
+          <div class="note-card" id="result-notes"></div>
+        </div>
+
+        <div class="result-block">
+          <h3><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 2.5l3 7 7.5.8-5.6 5 1.7 7.4L13 19l-6.6 3.7 1.7-7.4-5.6-5 7.5-.8z"/></svg>نقاط قوتكِ</h3>
+          <ul class="strengths" id="strengths"></ul>
+          <p class="strengths-empty" id="strengths-empty" hidden>نقاط قوتكِ في الطريق، وكل نصيحة بالأسفل خطوة نحوها.</p>
+        </div>
+
+        <div class="result-block" id="tips-block">
+          <h3><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M9 19h8M10 22.5h6M13 3a7 7 0 0 0-4 12.7c.7.6 1 1.3 1 2.3h6c0-1 .3-1.7 1-2.3A7 7 0 0 0 13 3z"/></svg>خطوات صغيرة لكِ</h3>
+          <ul class="tips" id="tips"></ul>
+        </div>
+
+        <p class="result-disclaimer" id="result-disclaimer"></p>
+
+        <div class="result-actions">
+          <button type="button" class="btn" id="share-btn">شاركي نتيجتك</button>
+          <a class="btn btn--ghost" href="index.html#habits">اقرئي النصائح</a>
+          <button type="button" class="btn btn--ghost" id="restart-btn">أعيدي الاختبار</button>
+        </div>
+
+        <!-- اختياري: متوسط المدرسة (مُطفأ افتراضيًا، راجعوا js/config.js) -->
+        <div class="sheets-box" id="sheets-box" hidden>
+          <p>هل تريدين إضافة نسبتكِ إلى <strong>متوسط المدرسة</strong> الذي سنعرضه في الورشة؟ سنرسل النسبة ودوركِ فقط، بلا اسم وبلا إجابات.</p>
+          <button type="button" class="btn btn--small" id="sheets-send">أضيفي نتيجتي (بلا اسم)</button>
+          <p id="sheets-status" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="bonus-invite" id="bonus-invite" hidden>
+          <h3>عندكِ دقيقة إضافية؟</h3>
+          <p>جولة إضافية من ٣ أسئلة «خرافة أم حقيقة؟». لا تؤثّر على مؤشركِ أبدًا.</p>
+          <button type="button" class="btn btn--small" id="bonus-start">ابدئي الجولة الإضافية</button>
+        </div>
+
+        <p class="clear-row">نتيجتكِ محفوظة على هذا الجهاز فقط. <button type="button" class="link-btn" data-clear-data>امسحي بياناتي</button></p>
+      </section>
+
+      <!-- ========== ٥. الجولة الإضافية ========== -->
+      <section class="screen" id="screen-bonus" tabindex="-1" aria-labelledby="bonus-title" hidden>
+        <p class="kicker" id="bonus-progress"></p>
+        <h2 id="bonus-title" data-focus tabindex="-1"></h2>
+        <p class="lead" id="bonus-intro"></p>
+        <fieldset class="question" id="bonus-question" tabindex="-1"></fieldset>
+        <div class="bonus-feedback" id="bonus-feedback" role="status" aria-live="polite" hidden></div>
+        <div class="quiz-nav">
+          <button type="button" class="btn btn--ghost" id="bonus-back">رجوع للنتيجة</button>
+          <button type="button" class="btn" id="bonus-next" hidden>السؤال التالي</button>
+        </div>
+        <div id="bonus-summary" hidden>
+          <h3 id="bonus-summary-title" tabindex="-1">انتهت الجولة! 🌸</h3>
+          <p id="bonus-score"></p>
+          <p>تذكّري: هذه الجولة للتعلّم فقط، ومؤشركِ لم يتغيّر.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="quiz-footer">
+    <div class="container">
+      <span class="quiz-footer__brand">
+        <img src="assets/logo.png" alt="" width="36" height="39">
+        <span><span data-c="credit">من صنع طالبات الصف 11A</span> · <span data-c="schoolName">مدرسة الاستقلال الخاصة</span></span>
+      </span>
+      <span>للتوعية فقط، وليس بديلًا عن رأي الطبيبة. <a href="index.html#resources-title">جهات موثوقة</a></span>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/quiz-data.js"></script>
+  <script src="js/quiz-logic.js"></script>
+  <script src="js/vendor/qrcode.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
