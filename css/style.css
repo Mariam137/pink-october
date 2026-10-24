@@ -397,16 +397,9 @@ strong { font-weight: 700; }
 .hero__flower { width: 46px; height: 46px; bottom: 8%; inset-inline-end: 44%; color: var(--rose); }
 
 /* ---------- 8. Hand-drawn ribbon (hero) ---------- */
-.ribbon { position: relative; width: min(100%, 17rem); margin-inline: auto; }
-@media (min-width: 900px) { .ribbon { width: min(100%, 22rem); } }
-.ribbon svg { width: 100%; height: auto; overflow: visible; }
-.ribbon__blob { fill: var(--blush); }
-.ribbon__band { fill: none; stroke: var(--berry); stroke-width: 38; stroke-linecap: butt; stroke-linejoin: round; }
-.ribbon__band--back { stroke: #C4607E; }
-.ribbon__line { fill: none; stroke: var(--navy); stroke-width: 2.2; stroke-linecap: round; opacity: .75; }
-.ribbon__shine { fill: none; stroke: rgba(255, 255, 255, .55); stroke-width: 5; stroke-linecap: round; }
-.ribbon__doodle { fill: none; stroke: var(--mustard); stroke-width: 3; stroke-linecap: round; }
-.ribbon__star { fill: none; stroke: var(--mustard); stroke-width: 2.5; stroke-linejoin: round; }
+.ribbon { position: relative; width: min(100%, 15rem); margin-inline: auto; }
+@media (min-width: 900px) { .ribbon { width: min(100%, 19rem); } }
+.ribbon img { width: 100%; height: auto; filter: drop-shadow(0 14px 18px rgba(126, 44, 72, .25)); }
 .ribbon__label {
   position: absolute;
   bottom: 4%;
@@ -416,9 +409,6 @@ strong { font-weight: 700; }
   color: var(--berry-deep);
   transform: rotate(-6deg);
 }
-.js .ribbon .ribbon__band { stroke-dasharray: 520; stroke-dashoffset: 520; animation: drawRibbon 1.6s .2s cubic-bezier(.4, .1, .2, 1) forwards; }
-.js .ribbon .ribbon__band--back { animation-delay: 0s; }
-@keyframes drawRibbon { to { stroke-dashoffset: 0; } }
 
 /* ---------- 9. Why it matters ---------- */
 .facts { list-style: none; counter-reset: fact; display: grid; gap: 1.6rem; }

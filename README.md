@@ -1,7 +1,7 @@
 # لأجلكِ يُزهر أكتوبر 🌸
 
-مبادرة توعوية بسرطان الثدي من **طالبات الصف 11A** في **مدرسة الاستقلال الخاصة**.
-A breast cancer awareness site by Grade 11A students at Al Estiqlal Private School.
+مبادرة توعوية بسرطان الثدي من **طالبات الصف 11آ** في **مدرسة الاستقلال الخاصة**.
+A breast cancer awareness site by Grade 11آ students at Al Estiqlal Private School.
 
 > [!IMPORTANT]
 > **قبل الورشة:** اطلبوا من ممرضة المدرسة أو معلّمة الصحة مراجعة كل المحتوى الطبي في الموقع.
@@ -112,7 +112,7 @@ Off by default. When enabled, the results page shows an explicit "add my result 
 
 ### Content & accuracy
 - All medical statements are general and conservative, and each one is sourced (see the footer). Sources checked October 2026: WHO breast cancer fact sheet; MOHAP *National Guideline for Breast Cancer Screening and Diagnosis* (3rd ed., 2023: mammogram every two years for average-risk women aged 40–69); ADPHC; FOCP Pink Caravan 2025 report; NCI; ACS; NBCF.
-- UAE links were opened and confirmed to be official sites. Phone numbers are included only where they appear on the official site (FOCP, MOHAP). DHA and DoH/ADPHC numbers are left as placeholders. Fill them in only from the official website.
+- UAE links were opened and confirmed to be official sites. FOCP and MOHAP numbers were verified on their official sites; the DHA (800342) and ADPHC/DoH (800555) numbers were provided by the team.
 - **Have the school nurse or a health teacher review the content before the workshop.**
 
 ### Credits
